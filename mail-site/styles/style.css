@@ -1,0 +1,19 @@
+html {
+    background-color: rgb(13, 119, 240);
+    color: azure;
+    font-size: 30px;
+}
+
+ul {
+    background: darkred;
+    padding: 10px;
+    border: 1px solid black;
+}
+
+.block {
+    display: inline-flex;
+}
+
+li {
+    margin-left: 20px;
+}
