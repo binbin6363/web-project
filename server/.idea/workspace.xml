@@ -11,9 +11,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c30c9ff1-63f9-4cc3-98f9-e858c2300455" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../mail-site/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../mail-site/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mail-site/scripts/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/../mail-site/scripts/script.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mail-site/styles/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/../mail-site/styles/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/route/carousels.go" beforeDir="false" afterPath="$PROJECT_DIR$/route/carousels.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/route/config.go" beforeDir="false" afterPath="$PROJECT_DIR$/route/config.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/route/login.go" beforeDir="false" afterPath="$PROJECT_DIR$/route/login.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/route/route.go" beforeDir="false" afterPath="$PROJECT_DIR$/route/route.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,6 +54,21 @@
     <property name="go.sdk.automatically.set" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
+  <component name="RunManager">
+    <configuration name="go build main.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="server" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="FILE" />
+      <filePath value="$PROJECT_DIR$/main.go" />
+      <directory value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Go Build.go build main.go" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -73,5 +93,38 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="390" y="154" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1641218390174">
+      <screen x="0" y="23" width="1792" height="1097" />
+    </state>
+    <state x="390" y="154" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1792.1097@0.23.1792.1097" timestamp="1641218390174" />
+    <state width="1690" height="307" key="GridCell.Tab.0.bottom" timestamp="1641218401687">
+      <screen x="0" y="23" width="1792" height="1097" />
+    </state>
+    <state width="1690" height="307" key="GridCell.Tab.0.bottom/0.23.1792.1097@0.23.1792.1097" timestamp="1641218401687" />
+    <state width="1690" height="307" key="GridCell.Tab.0.center" timestamp="1641218401686">
+      <screen x="0" y="23" width="1792" height="1097" />
+    </state>
+    <state width="1690" height="307" key="GridCell.Tab.0.center/0.23.1792.1097@0.23.1792.1097" timestamp="1641218401686" />
+    <state width="1690" height="307" key="GridCell.Tab.0.left" timestamp="1641218401685">
+      <screen x="0" y="23" width="1792" height="1097" />
+    </state>
+    <state width="1690" height="307" key="GridCell.Tab.0.left/0.23.1792.1097@0.23.1792.1097" timestamp="1641218401685" />
+    <state width="1690" height="307" key="GridCell.Tab.0.right" timestamp="1641218401687">
+      <screen x="0" y="23" width="1792" height="1097" />
+    </state>
+    <state width="1690" height="307" key="GridCell.Tab.0.right/0.23.1792.1097@0.23.1792.1097" timestamp="1641218401687" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/route/login.go</url>
+          <line>16</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

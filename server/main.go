@@ -1,14 +1,16 @@
 package main
 
 import (
-	"./route"
+	"github.com/binbin6363/web-project/server/route"
+	"github.com/binbin6363/web-project/server/middleware"
 	"github.com/gin-gonic/gin"
 )
 
 func main() {
-	r := gin.Default()
+	engine := gin.Default()
+	engine.Use(middleware.Cors())
 
-	route.Route(r)
+	route.Route(engine)
 
-	r.Run(":8080")
+	engine.Run(":8080")
 }
