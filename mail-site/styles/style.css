@@ -1,19 +1,10 @@
-html {
-    background-color: rgb(13, 119, 240);
-    color: azure;
-    font-size: 30px;
+@import url("https://unpkg.com/element-ui@2.15.7/lib/theme-chalk/index.css");
+.el-header {
+    background-color: #B3C0D1;
+    color: #333;
+    line-height: 60px;
 }
 
-ul {
-    background: darkred;
-    padding: 10px;
-    border: 1px solid black;
-}
-
-.block {
-    display: inline-flex;
-}
-
-li {
-    margin-left: 20px;
+.el-aside {
+    color: #333;
 }
