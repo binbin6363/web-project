@@ -19,6 +19,6 @@ func Route(r *gin.Engine) {
 		v1.POST("/indexConfigs/delete", ConfigDelHandler)
 		v1.POST("/carousels", CarouselsHandler)
 		v1.POST("/indexConfigs", ConfigHandler)
-		v1.POST("/logout", LogoutHandler)
+		v1.DELETE("/logout", LogoutHandler)
 	}
 }
