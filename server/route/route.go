@@ -22,5 +22,6 @@ func Route(r *gin.Engine) {
 		v1.GET("/carousels", CarouselsHandler)
 		v1.GET("/indexConfigs", ConfigHandler)
 		v1.DELETE("/logout", LogoutHandler)
+		v1.GET("/orders", GetOrderHandler)
 	}
 }

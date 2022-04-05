@@ -27,10 +27,10 @@ axios.interceptors.response.use(res => {
         if (res.data.resultCode == 419) {
             router.push({ path: '/login' })
         }
-        return Promise.reject(res.data.data)
+        return Promise.reject(res.data)
     }
 
-    return res.data.data
+    return res.data
 })
 
 export default axios

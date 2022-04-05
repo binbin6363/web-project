@@ -67,8 +67,8 @@ const router = createRouter({
                 import ('./views/Order.vue')
         },
         {
-            path: '/orderDetail',
-            name: 'orderDetail',
+            path: '/orderManage',
+            name: 'orderManage',
             component: () =>
                 import ('./views/OrderDetail.vue')
         },
@@ -77,6 +77,12 @@ const router = createRouter({
             name: 'goods',
             component: () =>
                 import ('./views/goods/index.vue')
+        },
+        {
+            path: '/chat',
+            name: 'chat',
+            component: () =>
+                import ('./views/chat/index.vue')
         }
     ]
 })

@@ -49,7 +49,7 @@
         label="订单状态"
       >
         <template #default="scope">
-          <span>{{ $filters.orderMap(scope.row.orderStatus) }}</span>
+          <!-- <span>{{ $filters.orderMap(scope.row.orderStatus) }}</span> -->
         </template>
       </el-table-column>
       <el-table-column
@@ -173,6 +173,7 @@ export default {
           orderStatus: state.orderStatus
         }
       }).then(res => {
+        console.log("==========>",res)
         state.tableData = res.list
         state.total = res.totalCount
         state.currentPage = res.currPage

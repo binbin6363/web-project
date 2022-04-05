@@ -11,7 +11,8 @@
         <div class="line" />
         <el-menu
           :default-openeds="state.defaultOpen"
-          background-color="#222832"
+          active-text-color="#ffd04b"
+          background-color="#545c64"
           text-color="#fff"
           :router="true"
           :default-active='state.currentPath'
@@ -21,7 +22,7 @@
               <span>物资交换</span>
             </template>
             <el-menu-item-group>
-              <el-menu-item index="/product"><i class="el-icon-data-line" />易物广场</el-menu-item>
+              <el-menu-item index="/goods"><i class="el-icon-data-line" />易物广场</el-menu-item>
             </el-menu-item-group>
           </el-submenu>
           <el-submenu index="2">
@@ -29,7 +30,7 @@
               <span>个人中心</span>
             </template>
             <el-menu-item-group>
-              <el-menu-item index="/exchange"><i class="el-icon-lock" />我的易物</el-menu-item>
+              <el-menu-item index="/order"><i class="el-icon-lock" />我的易物</el-menu-item>
               <el-menu-item index="/mine"><i class="el-icon-plus" />我的物资</el-menu-item>
               <el-menu-item index="/addProduct"><i class="el-icon-plus" />添加物资</el-menu-item>
               <el-menu-item index="/account"><i class="el-icon-lock" />我的资料</el-menu-item>
@@ -41,7 +42,7 @@
             </template>
             <el-menu-item-group>
               <el-menu-item index="/guest"><i class="el-icon-lock" />会员管理</el-menu-item>
-              <el-menu-item index="/order"><i class="el-icon-lock" />订单统计</el-menu-item>
+              <el-menu-item index="/orderManage"><i class="el-icon-lock" />订单统计</el-menu-item>
             </el-menu-item-group>
           </el-submenu>
         </el-menu>
@@ -132,7 +133,7 @@ export default {
   }
   .aside {
     width: 200px!important;
-    background-color: #222832;
+    background-color: #545c64;
     overflow: hidden;
     overflow-y: auto;
     -ms-overflow-style: none;
