@@ -10,25 +10,25 @@ const router = createRouter({
             path: '/login',
             name: 'login',
             component: () =>
-                import ('./components/Login.vue')
+                import ('./views/Login.vue')
         },
         {
             path: '/account',
             name: 'account',
             component: () =>
-                import ('./components/Account.vue')
+                import ('./views/Account.vue')
         },
         {
             path: '/addGood',
             name: 'addGood',
             component: () =>
-                import ('./components/AddGood.vue')
+                import ('./views/AddGood.vue')
         },
         {
             path: '/category',
             name: 'category',
             component: () =>
-                import ('./components/Category.vue')
+                import ('./views/Category.vue')
         },
         {
             path: '/addCategory',
@@ -46,37 +46,37 @@ const router = createRouter({
             path: '/guest',
             name: 'guest',
             component: () =>
-                import ('./components/Guest.vue')
+                import ('./views/Guest.vue')
         },
         {
             path: '/index',
             name: 'index',
             component: () =>
-                import ('./components/Index.vue')
+                import ('./views/Index.vue')
         },
         {
             path: '/indexConfig',
             name: 'indexConfig',
             component: () =>
-                import ('./components/IndexConfig.vue')
+                import ('./views/IndexConfig.vue')
         },
         {
             path: '/order',
             name: 'order',
             component: () =>
-                import ('./components/Order.vue')
+                import ('./views/Order.vue')
         },
         {
             path: '/orderDetail',
             name: 'orderDetail',
             component: () =>
-                import ('./components/OrderDetail.vue')
+                import ('./views/OrderDetail.vue')
         },
         {
-            path: '/swiper',
-            name: 'swiper',
+            path: '/goods',
+            name: 'goods',
             component: () =>
-                import ('./components/Swiper.vue')
+                import ('./views/goods/index.vue')
         }
     ]
 })
