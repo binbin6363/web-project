@@ -1,0 +1,12 @@
+email:
+  from: tpo2022@yeah.net
+  nick: 时光邮局
+  token: AXNJPCHCMCMVVKDW
+  host: smtp.yeah.net
+  port: 25
+
+server:
+  addr: ":8080"
+
+mysql:
+  addr: tpo:tpo2022@tcp(192.168.0.100:3306)/db_tpo?charset=latin1&parseTime=True&loc=Local

@@ -5,11 +5,11 @@ import (
 )
 
 type Result struct {
-	Data          string `json:"data,omitempty"`
-	ResultCode    int    `json:"resultCode,omitempty"`
-	Message       string `json:"message,omitempty"`
-	NickName      string `json:"nickName,omitempty"`
-	LoginUserName string `json:"loginUserName,omitempty"`
+	Data          interface{} `json:"data,omitempty"`
+	ResultCode    int         `json:"resultCode,omitempty"`
+	Message       string      `json:"message,omitempty"`
+	NickName      string      `json:"nickName,omitempty"`
+	LoginUserName string      `json:"loginUserName,omitempty"`
 }
 
 func Route(r *gin.Engine) {
@@ -18,6 +18,8 @@ func Route(r *gin.Engine) {
 	{
 		v1.POST("/adminUser/login", loginHandler)
 		v1.GET("/adminUser/profile", profileHandler)
+		v1.POST("/addEmail", addEmail)
+		v1.GET("/queryEmail", queryEmail)
 		v1.POST("/indexConfigs/delete", ConfigDelHandler)
 		v1.GET("/carousels", CarouselsHandler)
 		v1.GET("/indexConfigs", ConfigHandler)
