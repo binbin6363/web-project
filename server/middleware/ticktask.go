@@ -46,10 +46,15 @@ func (tt *TickTask) Tick() {
 				Body:     task.Body,
 			}
 			if err := EmailSend(info); err != nil {
+				task.State = 2
 				log.Printf("[%d] send email err:%v", idx, err)
 			} else {
+				task.State = 1
 				log.Printf("[%d] send email ok:%v", idx, info)
 			}
+			task.UpdateTime = int(time.Now().Unix())
+			id, err := GetDao().UpdateEmailTask(context.Background(), task)
+			log.Printf("email updat, id:%d, subject:%s, err:%v", id, task.Subject, err)
 		}
 	}
 }

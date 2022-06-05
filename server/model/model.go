@@ -32,6 +32,7 @@ type EmailBasic struct {
 	Mode        string `json:"mode"`         // 邮件发送模式。随机/定向
 	Public      bool   `json:"public"`       // 邮件是否公开可见
 	TriggleDate string `json:"triggle_date"` // 邮件投递时间，日期
+	State       string `json:"state"`        // 邮件投递状态
 }
 
 type QueryEmailRsp struct {

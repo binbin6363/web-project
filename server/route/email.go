@@ -81,6 +81,15 @@ func queryEmail(c *gin.Context) {
 				Public:      info.Public,
 				TriggleDate: time.Unix(int64(info.TriggleTime), 0).Format("2006-01-02"),
 			}
+			if info.State == 0 {
+				basic.State = "等待投递"
+			} else if info.State == 1 {
+				basic.State = "投递成功"
+			} else if info.State == 2 {
+				basic.State = "投递失败"
+			} else {
+				basic.State = "未知状态"
+			}
 			rsp.BasicList = append(rsp.BasicList, *basic)
 		}
 	} else {

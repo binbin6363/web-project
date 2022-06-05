@@ -10,6 +10,10 @@ import (
 
 // EmailSend 发送email
 func EmailSend(info *model.EmailInfo) error {
+	if info.Receiver == "" || info.Body == "" {
+		log.Printf("Receiver|Body empty, no send yet, wait for implement")
+		return nil
+	}
 	m := gomail.NewMessage()
 
 	//发送人
