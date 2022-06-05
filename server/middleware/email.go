@@ -21,7 +21,7 @@ func EmailSend(info *model.EmailInfo) error {
 	//主题
 	m.SetHeader("Subject", info.Subject)
 	//内容
-	m.SetBody("text/html", info.Content)
+	m.SetBody("text/html", info.Body)
 	//附件
 	//m.Attach("./myIpPic.png")
 

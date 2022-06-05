@@ -21,8 +21,8 @@ func GetDao() *Dao {
 	return d
 }
 
-// New creates Dao instance
-func New(dsn string) error {
+// NewMySQL creates Dao instance
+func NewMySQL(dsn string) error {
 	d = &Dao{}
 
 	// 参考 https://github.com/go-sql-driver/mysql#dsn-data-source-name 获取详情

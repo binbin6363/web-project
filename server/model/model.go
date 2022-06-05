@@ -19,7 +19,7 @@ type EmailInfo struct {
 	Receiver   string // 收件人
 	CCReceiver string // 抄送人
 	Subject    string // 邮件主题
-	Content    string // 邮件内容
+	Body       string // 邮件内容
 }
 
 type QueryEmailReq struct {
