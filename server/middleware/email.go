@@ -48,7 +48,7 @@ func EmailSend(info *model.EmailInfo) error {
 		config.GetConfig().Email.From, config.GetConfig().Email.Token)
 
 	// 发送邮件
-	err = d.DialAndSend(m)
+	err := d.DialAndSend(m)
 	if err != nil {
 		log.Printf("DialAndSend err %v:", err)
 		return err
