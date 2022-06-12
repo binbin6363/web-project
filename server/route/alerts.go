@@ -23,14 +23,14 @@ func State2Action(state string) string {
 
 // AlertsHandler .
 func AlertsHandler(c *gin.Context) {
-	req := &model.AlertRequest{}
+	req := new(model.AlertRequest)
 	if err := c.ShouldBind(req); err != nil {
 		fmt.Printf("parse req failed, err:%v", err)
 		c.JSON(200, nil)
 		return
 	}
 
-	fmt.Printf("recv: %v", req)
+	fmt.Printf("recv: %v\n", req)
 	meta := fmt.Sprintf("match count:%d", len(req.EvalMatches))
 
 	smsReq := &model.SmsAlertReq{
@@ -54,6 +54,7 @@ func AlertsHandler(c *gin.Context) {
 	reqHttp.Header.Set("Content-Type", "application/json")
 	reqHttp.Header.Set("X-Secret", config.GetConfig().Alert.Secret)
 
+	fmt.Printf("after Set Header:%v, body:%s", reqHttp.Header, string(body))
 	client := &http.Client{}
 	if resp, err := client.Do(reqHttp); err != nil {
 		defer resp.Body.Close()
@@ -61,5 +62,6 @@ func AlertsHandler(c *gin.Context) {
 		c.JSON(500, resp)
 	}
 
+	fmt.Printf("after client.Do:%v, body:%s", reqHttp.Header, string(body))
 	c.JSON(200, nil)
 }
