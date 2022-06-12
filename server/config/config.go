@@ -11,8 +11,13 @@ type Config struct {
 	Email  *Email  `yaml:"email"`  // 邮箱配置
 	Server *Server `yaml:"server"` // 邮箱配置
 	Db     *Db     `yaml:"mysql"`  // 邮箱配置
+	Alert  *Alert  `yaml:"alert"`  // 告警配置
 }
 
+type Alert struct {
+	Addr   string `yaml:"addr"`   // 地址
+	Secret string `yaml:"secret"` // Secret
+}
 type Server struct {
 	Addr string `yaml:"addr"` // 服务监听地址
 }

@@ -10,3 +10,7 @@ server:
 
 mysql:
   addr: tpo:tpo2022@tcp(192.168.0.100:3306)/db_tpo?charset=latin1&parseTime=True&loc=Local
+
+alert:
+  addr: http://paas.uat.rfzubs.com:80/o/cw_uac_saas/alarm/collect/event/api/75563987-d529-421d-bfaa-4bab4dfbdc8a/
+  secret: lAkTwemWYln1xzY3pvhtkyJ1Re3tBEIu

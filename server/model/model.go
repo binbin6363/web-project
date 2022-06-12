@@ -60,3 +60,43 @@ type EmailTask struct {
 func (EmailTask) TableName() string {
 	return "emails"
 }
+
+// EvalMatches .
+type EvalMatches struct {
+	Value  int               `json:"value"`
+	Metric string            `json:"metric"`
+	Tags   map[string]string `json:"tags"`
+}
+
+// AlertRequest grafana自定义webhook告警请求
+type AlertRequest struct {
+	Title       string        `json:"title"`       // title
+	Tags        string        `json:"tags"`        // tags
+	State       string        `json:"state"`       // state
+	RuleUrl     string        `json:"ruleUrl"`     // ruleUrl
+	RuleName    string        `json:"ruleName"`    // ruleName
+	RuleId      int           `json:"ruleId"`      // ruleId
+	OrgId       int           `json:"orgId"`       // orgId
+	Message     string        `json:"message"`     // message
+	DashboardId string        `json:"dashboardId"` // dashboardId
+	EvalMatches []EvalMatches `json:"evalMatches"` // evalMatches
+}
+
+// SmsAlertReq UBS 提供的短信告警restapi接口
+// 示例：curl -d '{"ip": "10.0.0.1", "source_time": "2022-05-09 16:43:53","alarm_type": "api_default",
+// "level": "remain","alarm_name": "FAILURE for production/HTTP", "alarm_content":
+// "FAILURE for production HTTP on machine 10.0.0.1", "meta_info": "结算中心", "action": "firing"}'
+// http://paas.uat.rfzubs.com:80/o/cw_uac_saas/alarm/collect/event/api/75563987-d529-421d-bfaa-4bab4dfbdc8a/
+// -H 'X-Secret:lAkTwemWYln1xzY3pvhtkyJ1Re3tBEIu' -v -k
+type SmsAlertReq struct {
+	Ip           string `json:"title"`         // 告警对象
+	SourceTime   string `json:"source_time"`   // 告警发生的时间，格式：YYYY-MM-DD HH:mm:ss，必须
+	AlarmType    string `json:"alarm_type"`    // 告警指标，必须
+	Level        string `json:"level"`         // 告警级别，必须，枚举：remain/warning/fatal(提醒/警告/致命)
+	AlarmName    string `json:"alarm_name"`    // 告警名称，可选
+	AlarmContent string `json:"alarm_content"` // 告警详情，可选
+	MetaInfo     string `json:"meta_info"`     // 告警其余信息，可选
+	Action       string `json:"action"`        // 告警事件动作，可选，不传默认是firing, 枚举：firing/resolved(产生告警/消除告警)
+	BkObjId      string `json:"bk_obj_id"`     // CMDB模型ID，可选,
+	BkInstId     string `json:"bk_inst_id"`    // CMDB模型实例ID，可选
+}
