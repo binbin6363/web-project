@@ -25,5 +25,6 @@ func Route(r *gin.Engine) {
 		v1.GET("/indexConfigs", ConfigHandler)
 		v1.DELETE("/logout", LogoutHandler)
 		v1.GET("/orders", GetOrderHandler)
+		v1.POST("/alerts", AlertsHandler)
 	}
 }
