@@ -71,7 +71,6 @@ type EvalMatches struct {
 // AlertRequest grafana自定义webhook告警请求
 type AlertRequest struct {
 	Title       string        `json:"title"`       // title
-	Tags        string        `json:"tags"`        // tags
 	State       string        `json:"state"`       // state
 	RuleUrl     string        `json:"ruleUrl"`     // ruleUrl
 	RuleName    string        `json:"ruleName"`    // ruleName
