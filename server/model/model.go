@@ -78,7 +78,7 @@ type AlertRequest struct {
 	RuleId      int           `json:"ruleId"`      // ruleId
 	OrgId       int           `json:"orgId"`       // orgId
 	Message     string        `json:"message"`     // message
-	DashboardId string        `json:"dashboardId"` // dashboardId
+	DashboardId int           `json:"dashboardId"` // dashboardId
 	EvalMatches []EvalMatches `json:"evalMatches"` // evalMatches
 }
 
