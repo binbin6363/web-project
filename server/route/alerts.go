@@ -26,7 +26,9 @@ func AlertsHandler(c *gin.Context) {
 	req := new(model.AlertRequest)
 	if err := c.ShouldBindJSON(req); err != nil {
 		fmt.Printf("parse req failed, err:%v\n", err)
-		c.JSON(200, nil)
+		c.JSON(500, gin.H{
+			"err": err.Error(),
+		})
 		return
 	}
 
@@ -49,7 +51,9 @@ func AlertsHandler(c *gin.Context) {
 	reqHttp, err := http.NewRequest("POST", config.GetConfig().Alert.Addr, bytes.NewBuffer(body))
 	if err != nil {
 		fmt.Printf("make sms req fail, err:%v, body:%s\n", err, string(body))
-		c.JSON(500, nil)
+		c.JSON(500, gin.H{
+			"err": err.Error(),
+		})
 	}
 	reqHttp.Header.Set("Content-Type", "application/json")
 	reqHttp.Header.Set("X-Secret", config.GetConfig().Alert.Secret)
@@ -59,10 +63,14 @@ func AlertsHandler(c *gin.Context) {
 	resp, err := client.Do(reqHttp)
 	if err != nil {
 		fmt.Printf("req sms fail, err:%v, req:%v\n", err, reqHttp)
-		c.JSON(500, resp)
+		c.JSON(500, gin.H{
+			"err": err.Error(),
+		})
 		return
 	}
 	defer resp.Body.Close()
 	fmt.Printf("after client.Do:%v, body:%s\n", reqHttp.Header, string(body))
-	c.JSON(200, nil)
+	c.JSON(200, gin.H{
+		"err": "ok",
+	})
 }
