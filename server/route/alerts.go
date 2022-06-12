@@ -24,8 +24,8 @@ func State2Action(state string) string {
 // AlertsHandler .
 func AlertsHandler(c *gin.Context) {
 	req := new(model.AlertRequest)
-	if err := c.ShouldBind(req); err != nil {
-		fmt.Printf("parse req failed, err:%v", err)
+	if err := c.ShouldBindJSON(req); err != nil {
+		fmt.Printf("parse req failed, err:%v\n", err)
 		c.JSON(200, nil)
 		return
 	}
@@ -44,24 +44,25 @@ func AlertsHandler(c *gin.Context) {
 		Action:       State2Action(req.State),
 	}
 
-	fmt.Printf("smsReq: %v, alert cfg:%v", smsReq, config.GetConfig().Alert)
+	fmt.Printf("smsReq: %v, alert cfg:%v\n", smsReq, config.GetConfig().Alert)
 	body, _ := json.Marshal(smsReq)
 	reqHttp, err := http.NewRequest("POST", config.GetConfig().Alert.Addr, bytes.NewBuffer(body))
 	if err != nil {
-		fmt.Printf("make sms req fail, err:%v, body:%s", err, string(body))
+		fmt.Printf("make sms req fail, err:%v, body:%s\n", err, string(body))
 		c.JSON(500, nil)
 	}
 	reqHttp.Header.Set("Content-Type", "application/json")
 	reqHttp.Header.Set("X-Secret", config.GetConfig().Alert.Secret)
 
-	fmt.Printf("after Set Header:%v, body:%s", reqHttp.Header, string(body))
+	fmt.Printf("after Set Header:%v, body:%s\n", reqHttp.Header, string(body))
 	client := &http.Client{}
-	if resp, err := client.Do(reqHttp); err != nil {
-		defer resp.Body.Close()
-		fmt.Printf("req sms fail, err:%v", err)
+	resp, err := client.Do(reqHttp)
+	if err != nil {
+		fmt.Printf("req sms fail, err:%v, req:%v\n", err, reqHttp)
 		c.JSON(500, resp)
+		return
 	}
-
-	fmt.Printf("after client.Do:%v, body:%s", reqHttp.Header, string(body))
+	defer resp.Body.Close()
+	fmt.Printf("after client.Do:%v, body:%s\n", reqHttp.Header, string(body))
 	c.JSON(200, nil)
 }
