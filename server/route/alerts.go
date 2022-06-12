@@ -30,6 +30,7 @@ func AlertsHandler(c *gin.Context) {
 		return
 	}
 
+	fmt.Printf("recv: %v", req)
 	meta := fmt.Sprintf("match count:%d", len(req.EvalMatches))
 
 	smsReq := &model.SmsAlertReq{
@@ -43,6 +44,7 @@ func AlertsHandler(c *gin.Context) {
 		Action:       State2Action(req.State),
 	}
 
+	fmt.Printf("smsReq: %v, alert cfg:%v", smsReq, config.GetConfig().Alert)
 	body, _ := json.Marshal(smsReq)
 	reqHttp, err := http.NewRequest("POST", config.GetConfig().Alert.Addr, bytes.NewBuffer(body))
 	if err != nil {
