@@ -22,11 +22,11 @@ func main() {
 	engine := gin.Default()
 	engine.Use(middleware.Cors())
 
-	if err := middleware.NewMySQL(config.GetConfig().Db.Addr); err != nil {
-		log.Fatal("init db failed")
-	}
+	// if err := middleware.NewMySQL(config.GetConfig().Db.Addr); err != nil {
+	// 	log.Fatal("init db failed")
+	// }
 
-	go middleware.NewTick().Tick()
+	// go middleware.NewTick().Tick()
 
 	route.Route(engine)
 

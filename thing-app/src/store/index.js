@@ -14,35 +14,35 @@ const requireModules = require.context('./modules', true, /index\.(ts|js)$/iu)
 const modules = {}
 
 requireModules.keys().forEach(filePath => {
-  const modular = requireModules(filePath)
-  let name = path.resolve(filePath, '..')
-  name = name.split('/').pop()
-  modules[name] = {
-    namespaced: true,
-    ...modular.default
-  }
+    const modular = requireModules(filePath)
+    let name = path.resolve(filePath, '..')
+    name = name.split('/').pop()
+    modules[name] = {
+        namespaced: true,
+        ...modular.default
+    }
 })
 
 const store = createStore({
-  actions: {
+    actions: {
 
-    /**
-     * @description: 清除、初始化数据
-     * @param {*} dispatch
-     * @return {*}
-     * @author: gumingchen
-     */
-    clear({ dispatch }) {
-      dispatch('user/clear')
-      dispatch('conversation/clear')
-      dispatch('friend/clear')
-      dispatch('status/clear')
-      dispatch('websocket/close')
+        /**
+         * @description: 清除、初始化数据
+         * @param {*} dispatch
+         * @return {*}
+         * @author: gumingchen
+         */
+        clear({ dispatch }) {
+            dispatch('user/clear')
+            dispatch('conversation/clear')
+            dispatch('friend/clear')
+            dispatch('status/clear')
+            dispatch('websocket/close')
+        }
+    },
+    modules: {
+        ...modules
     }
-  },
-  modules: {
-    ...modules
-  }
 })
 
 export default store

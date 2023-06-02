@@ -85,7 +85,7 @@ import { defineComponent, toRefs, reactive, computed, onMounted, nextTick, ref }
 import { ElMessage } from 'element-plus';
 import { jsPlumb } from 'jsplumb';
 import Sortable from 'sortablejs';
-import { useStore } from '/@/store/index';
+import { useStore } from 'vuex';
 import Contextmenu from './component/contextmenu/index.vue';
 import Drawer from './component/drawer/index.vue';
 import { leftNavList } from './mock';
